@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 화살표 함수로 바꿔보고 호출해보기
+    // 화살표 함수로 바꿔보고 사용해보기
+
+
+    // 1
+    const add = function (a, b) {
+      return a + b
+    }
+
+    const arrowAdd = (a, b) =>  {return a + b}
+    console.log("========arrow1=======");
+    console.log(add(1, 3));
+    console.log(arrowAdd(1, 3));
+    
+    // 2
+    const greet = function () {
+      return "Hello, World!"
+    }
+    
+    const arrowGreet = () => "Hello, World!"
+    console.log("========arrow2=======");
+    console.log(greet());
+    console.log(arrowGreet());
+    
+    // 3
+    const square = function (x) {
+      return x * x
+    }
+    
+    const arrowSquare = x =>  x * x
+    console.log("========arrow3=======");
+    console.log(square(10));
+    console.log(arrowSquare(10));
+    
+    // 4
+    const numbers = [1, 2, 3, 4, 5]
+    const doubled = numbers.map(function (num) {
+      return num * 2
+    })
+
+    const arrowDoubled = numbers.map(num => num * 2)
+    console.log("========arrow4=======");
+    console.log(doubled);
+    console.log(arrowDoubled);
+    
+    // 5
+    const createUser = function (name, age) {
+      return {
+        name: name,
+        age: age
+      }
+    }
+
+    const arrowCreateUser = (name, age) =>  {
+      return {
+        name: name,
+        age: age
+      }
+    }
+
+    console.log("========arrow5=======");
+    console.log(createUser('윤재은', '26'));
+    console.log(arrowCreateUser('윤재은', '26'));
+    
+    // 6
+    const greetUser = function (name = "Guest") {
+      return `Hello, ${name}!`
+    }
+    
+    const arrowGreetUser = (name = "Guest") => {return `Hello, ${name}!`}
+    
+    console.log("========arrow6=======");
+    console.log(greetUser());
+    console.log(arrowGreetUser());
+    
+    
+    // 7
+    const isEven = function (num) {
+      if (num % 2 === 0) {
+        return true
+      } else {
+        return false
+      }
+    }
+    
+    const arrowIsEven = (num) => {
+      if (num % 2 === 0) {
+        return true
+      } else {
+        return false
+      }
+    }
+    
+    console.log("========arrow7=======");
+    console.log(isEven(12));
+    console.log(arrowIsEven(12));
+    
+    
+    
+    // 8
+    // console.log를 직접 호출하지 않고
+    // printResult 함수를 호출해서 출력해보기
+    // 콜백함수 : 다른 함수의 인자로 전달되어 특정 시점에 호출되는 함수
+    const printResult = function (callback, value) {
+      return callback(value)
+    }
+    
+    const arrowPrintResult = (value) => {
+      console.log(`${value} 라는 값을 가진 콜백함수 호출`);
+    }
+    
+    console.log("========arrow8=======");
+    printResult(arrowPrintResult, '메롱')
+  </script>
+</body>
+
+</html>
